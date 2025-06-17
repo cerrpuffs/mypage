@@ -1,0 +1,58 @@
+---
+import Code from '../components/Code.astro';
+---
+
+<section class="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-24 min-h-screen justify-center items-center ">
+  <!-- Sección de la izquierda -->
+  <div class="flex items-center justify-center w-full lg:w-1/2">
+    <div class="flex flex-col items-center text-center max-w-md">
+      <div class="relative mb-6">
+        <img 
+          src="https://static.vecteezy.com/system/resources/previews/038/357/518/non_2x/red-anger-symbol-icon-free-png.png" 
+          class="w-8 sm:w-10 absolute top-0 right-4 sm:right-7 z-10" 
+          alt="Icono de enojo"
+        >
+        <img 
+          src="https://avatars.githubusercontent.com/u/139426429?v=4" 
+          alt="Foto de perfil" 
+          class="rounded-full border-4 border-red-500 shadow-lg w-48 sm:w-56 mx-auto"
+        >
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-[Anton] mb-6 leading-tight">
+        Daniel Cerritos
+      </h1>
+      
+      <div class="mb-6 text-base sm:text-lg flex items-center justify-center border-2 border-red-500 rounded-full px-4 py-3 shadow-lg text-red-500 font-[Roboto] font-semibold max-w-fit">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-5 sm:size-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+        </svg>
+        <span class="whitespace-nowrap">Desarrollador de Software en formación</span>
+      </div>
+      
+      <p class="text-gray-500 text-sm sm:text-base text-center px-4">
+        *Esta página fue creada con Astro, TailwindCSS y mucho café*
+      </p>
+    </div>
+  </div>
+
+  <!-- Sección de la derecha -->
+  <div class="flex flex-col items-center justify-center w-full lg:w-1/2 min-h-[300px] lg:min-h-[400px]">
+    <Code />
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exile&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+  .cardmini {
+    max-width: 190px;
+    padding: 0.875rem;
+    font-size: 1rem;
+    border: 1.5px solid #ef4444;
+    border-radius: 0.5rem;
+    box-shadow: 2.5px 3px 0 #ef4444;
+    outline: none;
+    transition: ease 0.25s;
+  }
+</style>

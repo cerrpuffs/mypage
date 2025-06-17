@@ -1,0 +1,107 @@
+---
+// Este archivo es compatible con Astro
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<nav class="fixed top-0 w-full bg-white/100 dark:bg-white/100 backdrop-blur-md z-40 border-l-8 border-red-500 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- LOGO CON ANIMACIÓN RGB -->
+    <div class="text-2xl font-bold font-[Anton] flex flex-wrap wave">
+      <span style="--i:0">b</span>
+      <span style="--i:1">y</span>
+      <span style="--i:2">d</span>
+      <span style="--i:3">a</span>
+      <span style="--i:4">n</span>
+      <span style="--i:5">i</span>
+      <span style="--i:6">e</span>
+      <span style="--i:7">l</span>
+      <span style="--i:8">.</span>
+      <span style="--i:9">s</span>
+      <span style="--i:10">i</span>
+      <span style="--i:11">t</span>
+      <span style="--i:12">e</span>
+    </div>
+
+    <!-- MENÚ DE SECCIONES -->
+    <ul class="hidden md:flex space-x-8 text-[20px]">
+      <li><a href="#home" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Inicio</a></li>
+      <li><a href="#about" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Sobre mí</a></li>
+      <li><a href="#projects" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Proyectos</a></li>
+      <li><a href="#skills" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Habilidades</a></li>
+      <li><a href="#experience" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Experiencia</a></li>
+      <li><a href="#contact" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Contacto</a></li>
+    </ul>
+
+    <!-- BOTONES DE SONIDO Y MODO -->
+    <div class="flex items-center gap-2">
+      <button class="rounded-full hover:bg-gray-300 p-2 transition text-black hover:animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .wave span {
+    animation: wave 1.5s infinite, rgbColor 3s infinite;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .wave span:nth-child(odd) {
+    animation-delay: calc(var(--i) * 0.1s);
+  }
+
+  .wave span:nth-child(even) {
+    animation-delay: calc(var(--i) * 0.1s);
+  }
+
+  @keyframes wave {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes rgbColor {
+    0% { color: rgb(255, 0, 0); }
+    33% { color: rgb(0, 255, 0); }
+    66% { color: rgb(0, 0, 255); }
+    100% { color: rgb(255, 0, 0); }
+  }
+  
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exile&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .circle1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 182, 193, 0.4) 0%, rgba(255, 218, 185, 0.3) 30%, rgba(240, 230, 220, 0.2) 70%, transparent 100%);
+    top: -100px;
+    left: -100px;
+    animation: float1 15s ease-in-out infinite;
+  }
+
+  .circle2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 70% 70%, rgba(255, 228, 196, 0.35) 0%, rgba(255, 192, 203, 0.25) 40%, rgba(245, 245, 220, 0.15) 80%, transparent 100%);
+    bottom: -150px;
+    right: -150px;
+    animation: float2 18s ease-in-out infinite reverse;
+  }
+    
+</style>
