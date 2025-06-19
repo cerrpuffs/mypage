@@ -3,105 +3,306 @@
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<nav class="fixed top-0 w-full bg-white/100 dark:bg-white/100 backdrop-blur-md z-40 border-l-8 border-red-500 shadow-md">
+<nav class="fixed top-0 w-full bg-white dark:bg-neutral-900 backdrop-blur-md z-50 border-l-8 border-red-500 shadow-md transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
     <!-- LOGO CON ANIMACIÓN RGB -->
     <div class="text-2xl font-bold font-[Anton] flex flex-wrap wave">
-      <span style="--i:0">b</span>
-      <span style="--i:1">y</span>
-      <span style="--i:2">d</span>
-      <span style="--i:3">a</span>
-      <span style="--i:4">n</span>
-      <span style="--i:5">i</span>
-      <span style="--i:6">e</span>
-      <span style="--i:7">l</span>
-      <span style="--i:8">.</span>
-      <span style="--i:9">s</span>
-      <span style="--i:10">i</span>
-      <span style="--i:11">t</span>
-      <span style="--i:12">e</span>
+      <span style="--i:0">b</span><span style="--i:1">y</span><span style="--i:2">d</span><span style="--i:3">a</span>
+      <span style="--i:4">n</span><span style="--i:5">i</span><span style="--i:6">e</span><span style="--i:7">l</span>
+      <span style="--i:8">.</span><span style="--i:9">s</span><span style="--i:10">i</span><span style="--i:11">t</span><span style="--i:12">e</span>
     </div>
 
     <!-- MENÚ DE SECCIONES -->
     <ul class="hidden md:flex space-x-8 text-[20px]">
-      <li><a href="#home" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Inicio</a></li>
-      <li><a href="#about" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Sobre mí</a></li>
-      <li><a href="#projects" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Proyectos</a></li>
-      <li><a href="#skills" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Habilidades</a></li>
-      <li><a href="#experience" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Experiencia</a></li>
-      <li><a href="#contact" class="transition-colors hover:text-red-700 text-black transform transition duration-200 ease-in-out hover:-translate-y-1">Contacto</a></li>
+      <li><a href="#hero" class="menu-link">Inicio</a></li>
+      <li><a href="#about" class="menu-link">Sobre mí</a></li>
+      <li><a href="#projects" class="menu-link">Proyectos</a></li>
+      <li><a href="#skills" class="menu-link">Habilidades</a></li>
+      <li><a href="#experience" class="menu-link">Experiencia</a></li>
+      <li><a href="#contact" class="menu-link">Contacto</a></li>
     </ul>
 
-    <!-- BOTONES DE SONIDO Y MODO -->
+    <!-- ÍCONOS + MENU RESPONSIVE -->
     <div class="flex items-center gap-2">
-      <button class="rounded-full hover:bg-gray-300 p-2 transition text-black hover:animate-bounce">
+      <button id="sun-icon" class="p-2 rounded hover:bg-yellow-200 text-white-600 hover:text-yellow-600 hidden dark:inline transition">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
         </svg>
+
+      </button>
+      <button id="moon-icon" class="p-2 rounded hover:bg-gray-300 text-gray-800 dark:hidden transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+
+      <!-- Botón hamburguesa -->
+      <button id="toggleMenu" class="text-black dark:text-white p-2 rounded md:hidden">
+        <i class="fas fa-bars text-2xl"></i>
       </button>
     </div>
   </div>
 </nav>
+
+<!-- Overlay para cerrar el menú -->
+<div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 ease-in-out"></div>
+
+<!-- Menú lateral responsive -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-neutral-900 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+  <div class="flex justify-end p-4">
+    <button id="closeMenu" class="text-black dark:text-white">
+      <i class="fas fa-times text-2xl"></i>
+    </button>
+  </div>
+  <ul class="flex flex-col items-start gap-6 px-8 text-lg text-black dark:text-white">
+    <li class="menu-item-mobile" style="--delay: 0"><a href="#hero" class="menu-link-mobile">Inicio</a></li>
+    <li class="menu-item-mobile" style="--delay: 1"><a href="#about" class="menu-link-mobile">Sobre mí</a></li>
+    <li class="menu-item-mobile" style="--delay: 2"><a href="#projects" class="menu-link-mobile">Proyectos</a></li>
+    <li class="menu-item-mobile" style="--delay: 3"><a href="#skills" class="menu-link-mobile">Habilidades</a></li>
+    <li class="menu-item-mobile" style="--delay: 4"><a href="#experience" class="menu-link-mobile">Experiencia</a></li>
+    <li class="menu-item-mobile" style="--delay: 5"><a href="#contact" class="menu-link-mobile">Contacto</a></li>
+  </ul>
+</div>
 
 <style>
   .wave span {
     animation: wave 1.5s infinite, rgbColor 3s infinite;
     display: inline-block;
     font-weight: bold;
+    text-shadow: 0 0 4px rgba(255, 0, 255, 0.2);
   }
-
-  .wave span:nth-child(odd) {
-    animation-delay: calc(var(--i) * 0.1s);
-  }
-
+  .wave span:nth-child(odd),
   .wave span:nth-child(even) {
     animation-delay: calc(var(--i) * 0.1s);
   }
-
   @keyframes wave {
-    0%, 60%, 100% {
-      transform: translateY(0);
-    }
-    30% {
-      transform: translateY(-10px);
-    }
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
   }
-
   @keyframes rgbColor {
     0% { color: rgb(255, 0, 0); }
     33% { color: rgb(0, 255, 0); }
     66% { color: rgb(0, 0, 255); }
     100% { color: rgb(255, 0, 0); }
   }
-  
-</style>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exile&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
-  .circle {
+  #sun-icon:hover,
+  #moon-icon:hover {
+    box-shadow: 0 0 12px rgba(255, 255, 0, 0.5);
+    transform: rotate(10deg) scale(1.1);
+  }
+  #sun-icon,
+  #moon-icon {
+    transition: all 0.3s ease;
+    animation: pulsoSuave 4s infinite;
+  }
+  @keyframes pulsoSuave {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  .menu-link {
+    position: relative;
+    transition: all 0.25s ease;
+  }
+  .menu-link::after {
+    content: '';
     position: absolute;
-    border-radius: 50%;
-    filter: blur(1px);
-    animation: float 20s ease-in-out infinite;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ef4444;
+    transition: width 0.3s ease;
+  }
+  .menu-link:hover::after {
+    width: 100%;
   }
 
-  .circle1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 182, 193, 0.4) 0%, rgba(255, 218, 185, 0.3) 30%, rgba(240, 230, 220, 0.2) 70%, transparent 100%);
-    top: -100px;
-    left: -100px;
-    animation: float1 15s ease-in-out infinite;
+  /* Estilos para los items del menú móvil */
+  .menu-item-mobile {
+    opacity: 0;
+    transform: translateX(50px) scale(0.8);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .circle2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle at 70% 70%, rgba(255, 228, 196, 0.35) 0%, rgba(255, 192, 203, 0.25) 40%, rgba(245, 245, 220, 0.15) 80%, transparent 100%);
-    bottom: -150px;
-    right: -150px;
-    animation: float2 18s ease-in-out infinite reverse;
+  .menu-item-mobile.animate-in {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    animation-delay: calc(var(--delay) * 0.1s);
   }
-    
+
+  .menu-item-mobile.animate-out {
+    opacity: 0;
+    transform: translateX(50px) scale(0.8);
+    transition-delay: calc((5 - var(--delay)) * 0.05s);
+  }
+
+  /* Estilos para los links del menú móvil */
+  .menu-link-mobile {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+    padding: 12px 0;
+    font-weight: 500;
+    overflow: hidden;
+  }
+
+  .menu-link-mobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .menu-link-mobile:hover::before {
+    left: 100%;
+  }
+
+  .menu-link-mobile::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #ef4444, #f97316, #eab308);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+  }
+
+  .menu-link-mobile:hover::after {
+    width: 100%;
+  }
+
+  .menu-link-mobile:hover {
+    transform: translateX(8px);
+    color: #ef4444;
+    text-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+  }
+
+  /* Animación del botón de cerrar */
+  #closeMenu {
+    transition: all 0.3s ease;
+  }
+
+  #closeMenu:hover {
+    transform: rotate(90deg) scale(1.1);
+    color: #ef4444;
+  }
+
+  /* Estados del overlay */
+  .menu-overlay-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Animación del menú completo */
+  #mobileMenu {
+    backdrop-filter: blur(10px);
+    border-left: 4px solid #ef4444;
+  }
+
+  /* Efecto de brillo en el fondo del menú */
+  #mobileMenu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(239, 68, 68, 0.05) 0%, 
+      transparent 50%, 
+      rgba(239, 68, 68, 0.05) 100%);
+    pointer-events: none;
+  }
 </style>
+
+<script>
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+  const toggleBtn = document.getElementById('toggleMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  const mobileLinks = document.querySelectorAll('.menu-link-mobile');
+  const mobileItems = document.querySelectorAll('.menu-item-mobile');
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateIcons();
+  }
+
+  function updateIcons() {
+    if (document.documentElement.classList.contains('dark')) {
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    } else {
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    }
+  }
+
+  function openMenu() {
+    menu.classList.remove('translate-x-full');
+    overlay.classList.add('menu-overlay-visible');
+    document.body.style.overflow = 'hidden';
+    
+    // Animar entrada de items
+    setTimeout(() => {
+      mobileItems.forEach(item => {
+        item.classList.add('animate-in');
+      });
+    }, 150);
+  }
+
+  function closeMenu() {
+    // Animar salida de items
+    mobileItems.forEach(item => {
+      item.classList.remove('animate-in');
+      item.classList.add('animate-out');
+    });
+    
+    // Cerrar menú después de la animación
+    setTimeout(() => {
+      menu.classList.add('translate-x-full');
+      overlay.classList.remove('menu-overlay-visible');
+      document.body.style.overflow = '';
+      
+      // Resetear clases de animación
+      mobileItems.forEach(item => {
+        item.classList.remove('animate-out');
+      });
+    }, 400);
+  }
+
+  // Inicializar tema
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+  updateIcons();
+
+  // Event listeners
+  sunIcon.addEventListener('click', toggleTheme);
+  moonIcon.addEventListener('click', toggleTheme);
+  toggleBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // Cerrar menú al hacer clic en un link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar menú con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.classList.contains('translate-x-full')) {
+      closeMenu();
+    }
+  });
+</script>
