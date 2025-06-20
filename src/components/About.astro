@@ -1,28 +1,130 @@
-<section class="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full px-6 sm:px-8 lg:px-12 justify-center items-center bg-white mb-10 min-h-screen" id="about">
+<section
+  id="about"
+  class="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full px-6 sm:px-8 lg:px-12 justify-center items-center bg-white dark:bg-neutral-900 mb-10 min-h-screen"
+>
   <!-- lado izquierdo -->
-  <div class="flex flex-col items-center justify-center w-full lg:w-2/3 p-6 rounded-lg">
-    <h2 class="text-4xl font-bold mb-4 text-center font-[Winky Rough]">Sobre mí</h2>
-    <p class="text-gray-700 text-justify leading-relaxed text-lg">
-    ¡Hola! Soy Daniel Abraham Cerritos Rivera, Tengo 18 años y estudio Ingeniería en Desarrollo de Software en la Universidad de El Salvador. Me apasiona crear proyectos desde cero, sobre todo páginas web y sistemas útiles, con un enfoque en diseño minimalista y cute. Aprendo rápido, me adapto fácil y estoy constantemente mejorando mis habilidades en tecnologías como Astro, Tailwind, Electron y C++.
-  <br>
-    Actualmente desarrollo proyectos personales enfocados en automatización, asistencia inteligente y herramientas académicas. Me interesa todo lo relacionado con innovación tecnológica, inteligencia artificial y desarrollo frontend. Siempre busco combinar funcionalidad con una buena experiencia visual y práctica.
+  <div
+    class="flex flex-col items-center justify-center w-full lg:w-2/3 p-6 rounded-lg bg-white dark:bg-neutral-800 shadow-md dark:shadow-black/50 transition-colors duration-300"
+    id="about-left"
+  >
+    <h2
+      class="text-4xl font-bold mb-4 text-center font-[Winky Rough] text-gray-900 dark:text-red-400 transition-colors duration-300"
+    >
+      Sobre mí
+    </h2>
+    <p
+      class="text-gray-700 dark:text-gray-300 text-justify leading-relaxed text-lg transition-colors duration-300"
+    >
+      ¡Hola! Soy Daniel Abraham Cerritos Rivera, Tengo 18 años y estudio Ingeniería
+      en Desarrollo de Software en la Universidad de El Salvador.
+      Me apasiona crear proyectos desde cero, sobre todo páginas web y sistemas
+      útiles, con un enfoque en diseño minimalista y cute.
+      Aprendo rápido, me adapto fácil y estoy constantemente mejorando mis habilidades
+      en tecnologías como Astro, Tailwind, Electron y C++.
+      <br />
+      Actualmente desarrollo proyectos personales enfocados en automatización, asistencia
+      inteligente y herramientas académicas.
+      Me interesa todo lo relacionado con innovación tecnológica, inteligencia artificial
+      y desarrollo frontend.
+      Siempre busco combinar funcionalidad con una buena experiencia visual y práctica.
     </p>
-
-
   </div>
 
   <!-- lado derecho -->
-  <div class="flex flex-col justify-start p-6 bg-gray-100 rounded-lg shadow-lg border-blue-900">
-    <div class="flex justify-start items-center gap-2">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mt-[-15px] text-red-600">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+  <div
+    class="flex flex-col justify-start p-6 bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-lg  border border-red-500 dark:border-red-500 transition-colors duration-300 dark:shadow-red-500/50"
+    id="about-right"
+  >
+    <div class="flex justify-start items-center gap-2 mb-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 text-red-600 dark:text-red-400"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+        />
       </svg>
-      <h2 class="text-2xl font-bold mb-4">Resumen rápido</h2>
+      <h2
+        class="text-2xl font-bold text-gray-900 dark:text-gray-200"
+      >
+        Resumen rápido
+      </h2>
     </div>
-    <div class="gap-5"><span class="font-bold gap-2">Edad: </span> <span>18 años</span></div>
-    <div class="gap-5"><span class="font-bold gap-2">Ubicación: </span> <span>El Salvador</span></div>
-    <div class="gap-5"><span class="font-bold gap-2">Estado: </span> <span>Estudiante activo</span></div>
-    <div class="gap-5"><span class="font-bold gap-2">Idiomas: </span> <span>Español, Inglés</span></div>
-    <div class="gap-5"><span class="font-bold gap-2">Tecnologías: </span> <span>HTML, CSS, JavaScript, Astro, Tailwind, Electron</span></div>
+    <div class="flex flex-col gap-2 text-gray-800 dark:text-gray-300">
+      <div><span class="font-bold">Edad: </span>18 años</div>
+      <div><span class="font-bold">Ubicación: </span>El Salvador</div>
+      <div><span class="font-bold">Estado: </span>Estudiante activo</div>
+      <div><span class="font-bold">Idiomas: </span>Español, Inglés</div>
+      <div><span class="font-bold">Tecnologías: </span>HTML, CSS, JavaScript, Astro, Tailwind, Electron</div>
+    </div>
   </div>
 </section>
+
+<style>
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeSlideDown {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  /* Animación para entrar */
+  .introup {
+    animation: fadeSlideUp 0.8s ease-out forwards;
+  }
+
+  /* Animación para salir */
+  .outrop {
+    animation: fadeSlideDown 0.8s ease-in forwards;
+  }
+</style>
+
+<script>
+  if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', () => {
+      const left = document.getElementById('about-left');
+      const right = document.getElementById('about-right');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('introup');
+              entry.target.classList.remove('outrop');
+            } else {
+              entry.target.classList.remove('introup');
+              entry.target.classList.add('outrop');
+            }
+          });
+        },
+        {
+          threshold: 0.3, // entra cuando 30% es visible
+        }
+      );
+
+      observer.observe(left);
+      observer.observe(right);
+    });
+  }
+</script>
