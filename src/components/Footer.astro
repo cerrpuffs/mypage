@@ -43,9 +43,10 @@ const quickLinks = [
   <div class="absolute inset-0 pattern-dots opacity-30"></div>
 
   <div class="relative max-w-7xl mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-      <!-- Columna 1 -->
-      <div class="space-y-6">
+    <!-- Cambio aquí: grid especial para móviles -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      <!-- Columna 1 - Ocupa toda la fila en móviles -->
+      <div class="space-y-6 lg:col-span-1">
         <div class="floating-animation">
           <h2 class="text-3xl font-bold text-gradient mb-4">{name}</h2>
           <div class="gradient-border">
@@ -73,33 +74,36 @@ const quickLinks = [
         </div>
       </div>
 
-      <!-- Columna 2 -->
-      <div class="space-y-6">
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Enlaces rápidos</h3>
-        <nav class="space-y-3">
-          {quickLinks.map((link) => (
-            <a href={link.href} class="group flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              {link.name}
-            </a>
-          ))}
-        </nav>
-      </div>
+      <!-- Columnas 2 y 3 - Lado a lado en móviles -->
+      <div class="grid grid-cols-2 gap-6 lg:col-span-2 lg:grid-cols-2">
+        <!-- Columna 2 -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Enlaces rápidos</h3>
+          <nav class="space-y-3">
+            {quickLinks.map((link) => (
+              <a href={link.href} class="group flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                {link.name}
+              </a>
+            ))}
+          </nav>
+        </div>
 
-      <!-- Columna 3 -->
-      <div class="space-y-6">
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Servicios</h3>
-        <div class="space-y-4">
-          {services.map((service) => (
-            <div class="service-card p-4 rounded-xl">
-              <div class="flex items-center gap-3">
-                <div class={`w-8 h-8 ${service.color} rounded-lg flex items-center justify-center text-white`}>
-                  <i class={`fa-solid ${service.icon}`}></i>
+        <!-- Columna 3 -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Servicios</h3>
+          <div class="space-y-4">
+            {services.map((service) => (
+              <div class="service-card p-4 rounded-xl">
+                <div class="flex items-center gap-3">
+                  <div class={`w-8 h-8 ${service.color} rounded-lg flex items-center justify-center`}>
+                    <i class={`fa-solid ${service.icon} text-white`}></i>
+                  </div>
+                  <span class="font-medium text-gray-800 dark:text-white">{service.name}</span>
                 </div>
-                <span class="font-medium text-gray-800 dark:text-white">{service.name}</span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -122,3 +126,133 @@ const quickLinks = [
     </div>
   </div>
 </section>
+
+<style>
+  .gradient-border {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+    padding: 2px;
+    border-radius: 12px;
+  }
+
+  .gradient-border-inner {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  :global(.dark) .gradient-border-inner {
+    background: #0f172a;
+  }
+
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .service-card {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .border-gradient-subtle {
+    border-image: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.3), transparent) 1;
+  }
+
+  @keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animate-gradientMove {
+    background-size: 200% 200%;
+    animation: gradientMove 5s ease infinite;
+  }
+
+  .social-icon {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .social-icon:hover::before {
+    left: 100%;
+  }
+</style>
+
+<script>
+  const handleScroll = () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.pattern-dots');
+    if (parallax) {
+      parallax.style.transform = `translateY(${scrolled * 0.1}px)`;
+    }
+  };
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', handleScroll);
+    document.querySelectorAll('.service-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+      observer.observe(card);
+    });
+  });
+</script>
