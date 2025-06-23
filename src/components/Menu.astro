@@ -6,7 +6,11 @@
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
     <!-- LOGO CON ANIMACIÓN RGB -->
-    <div class="text-2xl font-bold font-[Anton] flex flex-wrap wave">
+    <div class="text-2xl font-bold font-[Anton] flex flex-wrap wave justify-center items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 code ">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+      </svg>
+
       <span style="--i:2">D</span><span style="--i:3">a</span>
       <span style="--i:4">n</span><span style="--i:5">i</span><span style="--i:6">e</span><span style="--i:7">l</span>
     </div>
@@ -15,8 +19,8 @@
     <ul class="hidden md:flex space-x-8 text-[20px] text-gray-700 dark:text-gray-300">
       <li><a href="#hero" class="menu-link">Inicio</a></li>
       <li><a href="#about" class="menu-link">Sobre mí</a></li>
-      <li><a href="#projects" class="menu-link">Proyectos</a></li>
       <li><a href="#skills" class="menu-link">Habilidades</a></li>
+      <li><a href="#projects" class="menu-link">Proyectos</a></li>
       <li><a href="#experience" class="menu-link">Experiencia</a></li>
       <li><a href="#contact" class="menu-link">Contacto</a></li>
     </ul>
@@ -53,14 +57,17 @@
   <ul class="flex flex-col items-start gap-6 px-8 text-lg text-gray-800 dark:text-gray-200">
     <li class="menu-item-mobile" style="--delay: 0"><a href="#hero" class="menu-link-mobile">Inicio</a></li>
     <li class="menu-item-mobile" style="--delay: 1"><a href="#about" class="menu-link-mobile">Sobre mí</a></li>
-    <li class="menu-item-mobile" style="--delay: 2"><a href="#projects" class="menu-link-mobile">Proyectos</a></li>
     <li class="menu-item-mobile" style="--delay: 3"><a href="#skills" class="menu-link-mobile">Habilidades</a></li>
+    <li class="menu-item-mobile" style="--delay: 2"><a href="#projects" class="menu-link-mobile">Proyectos</a></li>
     <li class="menu-item-mobile" style="--delay: 4"><a href="#experience" class="menu-link-mobile">Experiencia</a></li>
     <li class="menu-item-mobile" style="--delay: 5"><a href="#contact" class="menu-link-mobile">Contacto</a></li>
   </ul>
 </div>
 
 <style>
+  .code{
+    animation: rgbColor 3s infinite, wave 1.5s infinite;
+  }
   .wave span {
     animation: wave 1.5s infinite, rgbColor 3s infinite;
     display: inline-block;
