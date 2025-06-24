@@ -1,10 +1,11 @@
 ---
 const destacadoProject = {
-    title: "Portfolio Web Personal",
-    description: "Mi portafolio personal creado con Astro, Tailwind CSS y Framer Motion. Incluye animaciones suaves y un diseño moderno.",
-    fecha: "2023-10-01",
-    image: "/public/cap_page.png",
-    tecnologies: ["HTML", "CSS", "JavaScript", "Astro", "Tailwind CSS", "Framer Motion"],
+    title: "LinkVerse – Creador de Links Personalizados",
+    description: "Plataforma web inspirada en Linktree que permite a cualquier usuario crear su propio perfil de enlaces personalizados. Incluye sistema de registro e inicio de sesión, personalización del diseño (colores, avatar, fondo), y generación de enlaces públicos tipo linkverse.app/usuario.",
+    fecha: "23/06/2025",
+    image: "https://i.pinimg.com/originals/6d/48/30/6d4830517a7065b085dffe4816414d81.gif",
+    tecnologies: ["React", "Tailwind CSS", "JavaScript", "Node.js", "Express", "MongoDB", "Firebase Auth", "Framer Motion", "Vercel", "Railway"]
+,
     github: "/",
     url: "/",
 }
@@ -12,6 +13,15 @@ const destacadoProject = {
 const otherProjects = [
     {
         id: 1,
+        title: "Portafolio Web Personal",
+        description: "Un portafolio web personal que muestra mis proyectos y habilidades. Incluye animaciones y un diseño responsivo. Es esta pagina!!",
+        technologies: ["HTML", "CSS", "JavaScript", "Astro", "Tailwind CSS", "Framer Motion"],
+        githubUrl: "https://github.com/usuario/password-generator",
+        liveUrl: "https://password-generator.netlify.app/",
+        image: "/public/cap_page.png",
+    },
+    {
+        id: 2,
         title: "Generador de Códigos QR",
         description: "Generador de códigos QR simple con opción de descarga.",
         technologies: ["HTML", "CSS", "JavaScript"],
@@ -20,7 +30,7 @@ const otherProjects = [
         image: "https://private-user-images.githubusercontent.com/139426429/377262457-90051cb6-9930-47c0-8100-021ec195da36.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTA3MzU0MzAsIm5iZiI6MTc1MDczNTEzMCwicGF0aCI6Ii8xMzk0MjY0MjkvMzc3MjYyNDU3LTkwMDUxY2I2LTk5MzAtNDdjMC04MTAwLTAyMWVjMTk1ZGEzNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYyNFQwMzE4NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZTgxN2Y3MjVkOWE1Y2NiY2VhMDQwZGYyNDE3YTQ1NTY3NjNmZjdmMzk1YjEyZjY0MjA1YmI1YTNhZDI3YzE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.mBZinngyJj6lVu-Hvz6ylueoIQKObJJoV8KYw5SreGo",
     },
     {
-        id: 2,
+        id: 3,
         title: "Buscador de perfiles de GitHub",
         description: "Un buscador de perfiles de GitHub que utiliza la API REST de GitHub para mostrar información de usuarios.",
         technologies: ["JavaScript", "API REST", "Tailwind CSS", "HTML", "CSS"],
@@ -29,7 +39,7 @@ const otherProjects = [
         image: "https://github.com/cerrpuffs/githubsearch/raw/main/miniatura-pagina.png"
     },
     {
-        id: 3,
+        id: 4,
         title: "Muy pronto máss!!",
         description: "Sigo trabajando en proyectos que valgan la pena, y sobretodo sean bonitos y funcionales.",
         technologies: ["Emocion", "Dedicacion", "Creatividad"],
@@ -37,6 +47,7 @@ const otherProjects = [
         liveUrl: "/",
         image: "https://i.pinimg.com/originals/ac/a2/cc/aca2ccd4284e39d5c7f626f6bc214286.gif"
     }
+
 ];
 ---
 
@@ -58,7 +69,7 @@ const otherProjects = [
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                 </svg>
-                Proyecto Destacado
+                Proyecto En Construccion
             </h3>
             
             <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:scale-[1.02] max-w-4xl mx-auto">
