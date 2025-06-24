@@ -1,1 +1,1 @@
-ola
+![Logo de la empresa](./public/cap_page.png)
