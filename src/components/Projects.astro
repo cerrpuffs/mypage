@@ -1,11 +1,10 @@
-
 ---
 const destacadoProject = {
-    title: "Proyecto Destacado",
-    description: "Este es un proyecto destacado que muestra mis habilidades y experiencia en desarrollo web.",
+    title: "Portfolio Web Personal",
+    description: "Mi portafolio personal creado con Astro, Tailwind CSS y Framer Motion. Incluye animaciones suaves y un diseño moderno.",
     fecha: "2023-10-01",
-    image: "https://placehold.co/600x400",
-    tecnologies: ["HTML", "CSS", "JavaScript"],
+    image: "/public/cap_page.png",
+    tecnologies: ["HTML", "CSS", "JavaScript", "Astro", "Tailwind CSS", "Framer Motion"],
     github: "/",
     url: "/",
 }
@@ -13,48 +12,30 @@ const destacadoProject = {
 const otherProjects = [
     {
         id: 1,
-        title: "Task Manager App",
-        description: "Aplicación de gestión de tareas con drag & drop y colaboración en tiempo real.",
-        technologies: ["Vue.js", "Firebase", "CSS3"],
+        title: "Generador de Códigos QR",
+        description: "Generador de códigos QR simple con opción de descarga.",
+        technologies: ["HTML", "CSS", "JavaScript"],
         githubUrl: "https://github.com/usuario/task-manager",
-        liveUrl: "https://task-manager-demo.netlify.app",
-        color: "from-blue-500 to-purple-600"
+        liveUrl: "https://hubprofiler.netlify.app/",
+        image: "https://private-user-images.githubusercontent.com/139426429/377262457-90051cb6-9930-47c0-8100-021ec195da36.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTA3MzU0MzAsIm5iZiI6MTc1MDczNTEzMCwicGF0aCI6Ii8xMzk0MjY0MjkvMzc3MjYyNDU3LTkwMDUxY2I2LTk5MzAtNDdjMC04MTAwLTAyMWVjMTk1ZGEzNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjI0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYyNFQwMzE4NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZTgxN2Y3MjVkOWE1Y2NiY2VhMDQwZGYyNDE3YTQ1NTY3NjNmZjdmMzk1YjEyZjY0MjA1YmI1YTNhZDI3YzE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.mBZinngyJj6lVu-Hvz6ylueoIQKObJJoV8KYw5SreGo",
     },
     {
         id: 2,
-        title: "Weather Dashboard",
-        description: "Dashboard del clima con pronósticos detallados y mapas interactivos.",
-        technologies: ["JavaScript", "API REST", "Chart.js"],
+        title: "Buscador de perfiles de GitHub",
+        description: "Un buscador de perfiles de GitHub que utiliza la API REST de GitHub para mostrar información de usuarios.",
+        technologies: ["JavaScript", "API REST", "Tailwind CSS", "HTML", "CSS"],
         githubUrl: "https://github.com/usuario/weather-dashboard",
-        liveUrl: "https://weather-dashboard-demo.github.io",
-        color: "from-green-500 to-teal-600"
+        liveUrl: "https://hubprofiler.netlify.app/",
+        image: "https://github.com/cerrpuffs/githubsearch/raw/main/miniatura-pagina.png"
     },
     {
         id: 3,
-        title: "Portfolio Website",
-        description: "Sitio web personal con animaciones suaves y diseño moderno.",
-        technologies: ["Next.js", "Framer Motion", "Styled Components"],
-        githubUrl: "https://github.com/usuario/portfolio",
-        liveUrl: "https://portfolio-demo.vercel.app",
-        color: "from-pink-500 to-red-600"
-    },
-    {
-        id: 4,
-        title: "Chat Application",
-        description: "Aplicación de chat en tiempo real con salas privadas y públicas.",
-        technologies: ["React", "Socket.io", "Express.js"],
-        githubUrl: "https://github.com/usuario/chat-app",
-        liveUrl: "https://chat-app-demo.herokuapp.com",
-        color: "from-indigo-500 to-blue-600"
-    },
-    {
-        id: 5,
-        title: "Recipe Finder",
-        description: "Buscador de recetas con filtros avanzados y lista de favoritos.",
-        technologies: ["Angular", "TypeScript", "SCSS"],
-        githubUrl: "https://github.com/usuario/recipe-finder",
-        liveUrl: "https://recipe-finder-demo.netlify.app",
-        color: "from-orange-500 to-yellow-600"
+        title: "Muy pronto máss!!",
+        description: "Sigo trabajando en proyectos que valgan la pena, y sobretodo sean bonitos y funcionales.",
+        technologies: ["Emocion", "Dedicacion", "Creatividad"],
+        githubUrl: "/",
+        liveUrl: "/",
+        image: "https://i.pinimg.com/originals/ac/a2/cc/aca2ccd4284e39d5c7f626f6bc214286.gif"
     }
 ];
 ---
@@ -82,7 +63,7 @@ const otherProjects = [
             
             <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:scale-[1.02] max-w-4xl mx-auto">
                 <div class="lg:flex">
-                    <div class="lg:w-1/2">
+                    <div class="w-full lg:w-1/2">
                         <img 
                             src={destacadoProject.image} 
                             alt={`Captura del proyecto ${destacadoProject.title}`}
@@ -103,7 +84,7 @@ const otherProjects = [
                         
                         <div class="flex flex-wrap gap-2 mb-6">
                             {destacadoProject.tecnologies.map((tech) => (
-                                <span class="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full text-xs font-medium">
+                                <span class="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded text-xs font-medium">
                                     {tech}
                                 </span>
                             ))}
@@ -151,17 +132,22 @@ const otherProjects = [
             <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {otherProjects.map((project) => (
                     <div class="bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
-                        <!-- Header con gradiente -->
-                        <div class={`h-32 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                        <!-- Imagen del proyecto -->
+                        <div class="h-48 relative overflow-hidden">
+                            <img 
+                                src={project.image} 
+                                alt={`Captura del proyecto ${project.title}`}
+                                class="w-full h-full object-cover"
+                            />
                             <div class="absolute inset-0 bg-black/20"></div>
                             <div class="absolute bottom-4 left-4">
-                                <h4 class="text-xl font-bold text-white">{project.title}</h4>
                             </div>
                             <!-- Efecto de hover -->
                             <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                         
                         <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-1 code">{project.title}</h4>
                             <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
                                 {project.description}
                             </p>
@@ -208,17 +194,22 @@ const otherProjects = [
                 <div class="flex gap-4 pb-4">
                     {otherProjects.map((project) => (
                         <div class="flex-shrink-0 w-80 bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
-                            <!-- Header con gradiente -->
-                            <div class={`h-32 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                            <!-- Imagen del proyecto -->
+                            <div class="h-48 relative overflow-hidden">
+                                <img 
+                                    src={project.image} 
+                                    alt={`Captura del proyecto ${project.title}`}
+                                    class="w-full h-full object-cover"
+                                />
                                 <div class="absolute inset-0 bg-black/20"></div>
-                                <div class="absolute bottom-4 left-4">
-                                    <h4 class="text-xl font-bold text-white">{project.title}</h4>
-                                </div>
                                 <!-- Efecto de hover -->
+                                <div class="absolute bottom-4 left-4">
+                                </div>
                                 <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
                             <div class="p-6">
+                                    <h4 class="text-xl font-bold text-white mb-1 code">{project.title}</h4>
                                 <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
                                     {project.description}
                                 </p>
