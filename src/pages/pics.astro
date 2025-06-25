@@ -1,0 +1,217 @@
+---
+const totalImages = 16;
+const baseImages = Array.from({ length: totalImages }, (_, i) => `/imgopti/img${i + 1}.webp`);
+const images = baseImages;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fotoshechasparaputarla</title>
+    <link rel="preload" as="image" href="/imgopti/img1.webp" />
+    <link rel="preload" as="image" href="/imgopti/img2.webp" />
+    <style>
+      /* Galería tipo Masonry */
+      .masonry-gallery {
+        column-count: 1;
+        column-gap: 0;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .masonry-gallery img {
+        width: 100%;
+        display: block;
+        margin-bottom: 0;
+        break-inside: avoid;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .masonry-gallery img:hover {
+        transform: scale(1.03);
+        z-index: 10;
+      }
+
+      @media (min-width: 640px) {
+        .masonry-gallery { column-count: 2; }
+      }
+      @media (min-width: 1024px) {
+        .masonry-gallery { column-count: 3; }
+      }
+      @media (min-width: 1280px) {
+        .masonry-gallery { column-count: 4; }
+      }
+
+      /* Modal estilos */
+      .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      }
+
+      .modal.active { display: flex; }
+
+      .modal img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1001;
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        width: 3rem; height: 3rem;
+        display: flex; align-items: center; justify-content: center;
+      }
+
+      .modal-close:hover {
+        background: rgba(255,255,255,0.1);
+        transform: rotate(90deg);
+      }
+
+      .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        font-size: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 1001;
+      }
+
+      .modal-nav:hover {
+        background: rgba(255,255,255,0.1);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .modal-prev { left: 2rem; }
+      .modal-next { right: 2rem; }
+       .code {
+    animation: rgbColor 3s infinite;
+  }
+  @keyframes rgbColor {
+    0% { color: #3b82f6; }
+    33% { color: #8b5cf6; }
+    66% { color: #06b6d4; }
+    100% { color: #3b82f6; }
+  }
+    </style>
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+
+    <header class="text-center py-12 px-4 relative z-20 bg-black  ">
+      <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wider">
+        <span class="bg-gradient-to-r from-white to-gray-400 bg-clip-text code ">
+          Fotosrandom.png
+        </span>
+      </h1>
+      <p class="text-gray-400 mt-2 text-sm italic"></p>
+    </header>
+
+    <!-- Galería Masonry -->
+    <main class="masonry-gallery">
+      {images.map((src, index) => (
+        <img 
+          src={src} 
+          loading="lazy"
+          alt={`Imagen ${(index % totalImages) + 1}`}
+          data-index={index}
+          data-original-index={index % totalImages}
+        />
+      ))}
+    </main>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+      <div class="modal-close" id="closeModal">&times;</div>
+      <button class="modal-nav modal-prev" id="prevImage">‹</button>
+      <img id="modalImage" src="" alt="" />
+      <button class="modal-nav modal-next" id="nextImage">›</button>
+    </div>
+
+    <!-- Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.getElementById('closeModal');
+        const prevButton = document.getElementById('prevImage');
+        const nextButton = document.getElementById('nextImage');
+        const images = Array.from(document.querySelectorAll('main img'));
+
+        let currentImageIndex = 0;
+
+        images.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            currentImageIndex = parseInt(img.dataset.originalIndex);
+            showImage();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          });
+        });
+
+        function showImage() {
+          const actualIndex = currentImageIndex % 16;
+          modalImage.src = `/imgopti/img${actualIndex + 1}.webp`;
+          modalImage.alt = `Imagen ${actualIndex + 1}`;
+        }
+
+        prevButton.addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex - 1 + 16) % 16;
+          showImage();
+        });
+
+        nextButton.addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex + 1) % 16;
+          showImage();
+        });
+
+        function closeModalHandler() {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+
+        closeModal.addEventListener('click', closeModalHandler);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModalHandler();
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (!modal.classList.contains('active')) return;
+          switch (e.key) {
+            case 'Escape':
+              closeModalHandler();
+              break;
+            case 'ArrowLeft':
+              prevButton.click();
+              break;
+            case 'ArrowRight':
+              nextButton.click();
+              break;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
