@@ -15,11 +15,4 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Ejemplo de una posible página en el subdominio -->
-  <url>
-    <loc>https://link.bydaniel.site</loc>
-    <lastmod>2025-08-15</lastmod>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
